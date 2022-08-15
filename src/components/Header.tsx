@@ -1,4 +1,4 @@
-import styles from './Header.module.sass'
+import styles from './Header.module.scss'
 import img from '../assets/images/Logo.svg'
 
 export const Header = () => {

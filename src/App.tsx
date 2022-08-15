@@ -1,5 +1,5 @@
-import './global.sass'
-import styles from './App.module.sass'
+import './global.scss'
+import styles from './App.module.scss'
 import { Header } from './components/Header'
 import { Main } from './components/Main'
 
