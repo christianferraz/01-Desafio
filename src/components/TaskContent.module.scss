@@ -1,6 +1,35 @@
 .main {
   margin: 5rem auto;
-  width: 90rem;
-  background-color: red;
-  border: 1px solid blue;
+  width: 45rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.taskContent {
+  display: flex;
+  color: var(--blue);
+  font-size: 0.875rem;
+  flex-direction: row;
+  border-radius: 8px;
+  width: 45rem;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+
+
+.taskMsg {
+  margin-top: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.5rem;
+  & > div:nth-child(2) {
+    margin-top: 20px;
+    font-weight: bold;
+  }
 }
