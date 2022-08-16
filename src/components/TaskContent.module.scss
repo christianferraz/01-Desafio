@@ -18,8 +18,6 @@
   margin-bottom: 10px;
 }
 
-
-
 .taskMsg {
   margin-top: 50px;
   width: 100%;
@@ -31,5 +29,67 @@
   & > div:nth-child(2) {
     margin-top: 20px;
     font-weight: bold;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 0.5rem;
+    margin-top: 1.5rem;
+    td {
+      padding: 1.5rem;
+      background: var(--gray-400);
+      &:first-child {
+        border-top-left-radius: 6px;
+        border-bottom-left-radius: 6px;
+      }
+      &:last-child {
+        border-top-right-radius: 6px;
+        border-bottom-right-radius: 6px;
+      }
+    }
+  }
+}
+
+.checkBox {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  label {
+    background-color: transparent;
+    border: 1px solid var(--blue);
+    border-radius: 50%;
+    cursor: pointer;
+    height: 24px;
+    width: 24px;
+    left: 0;
+    position: absolute;
+    top: 0;
+
+    &:after {
+      border: 2px solid #fff;
+      border-top: none;
+      border-right: none;
+      content: "";
+      height: 6px;
+      left: 5px;
+      opacity: 0;
+      position: absolute;
+      top: 6px;
+      transform: rotate(-45deg);
+      width: 12px;
+    }
+  }
+  input[type="checkbox"] {
+    visibility: hidden;
+
+    &:checked + label {
+      background-color: var(--purple-dark);
+      border-color: var(--purple-dark);
+    }
+    &:checked + label:after {
+      opacity: 1;
+    }
   }
 }
