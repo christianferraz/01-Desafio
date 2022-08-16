@@ -2,7 +2,7 @@ import styles from './TaskContent.module.scss'
 import { ClipboardText, Trash } from 'phosphor-react'
 import { Counter } from './Counter'
 import { ListProps } from './Main'
-import { FormEvent } from 'react'
+import { FormEvent, useCallback } from 'react'
 
 interface TaskContentProps {
   list: ListProps[]
@@ -31,11 +31,14 @@ export const TaskContent = ({ list, setList }: TaskContentProps) => {
     setList(list.filter((lis) => lis.id !== id))
   }
 
-  const memoizeFunction = () =>
-    list.reduce((counter, obj) => {
-      obj.isCompleted && counter++
-      return counter
-    }, 0)
+  const memoizeFunction = useCallback(
+    () =>
+      list.reduce((counter, obj) => {
+        obj.isCompleted && counter++
+        return counter
+      }, 0),
+    [list],
+  )
 
   return (
     <div className={styles.main}>
